@@ -128,8 +128,8 @@ for ending in range(1,33):
         for i in range(area['answers']):
             pos = np.where(ans_mtrx[i])[0]
             if len(pos) == 1:
-                is_right = right_answers[i] == options[pos[0]]
-                student_answers.append([q_counter, options[pos[0]], right_answers[i], is_right])
+                is_right = right_answers[q_counter-1] == options[pos[0]]
+                student_answers.append([q_counter, options[pos[0]], right_answers[q_counter-1], is_right])
                 if q_counter < 26:
                     mat_irt.append((ending, q_counter, is_right))
                 elif q_counter < 51:
